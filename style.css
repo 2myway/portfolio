@@ -6,6 +6,7 @@
   --color-dark-white: #bdbdbd;
   --color-pink: #fe918d;
   --color-dark-pink: #ff6863;
+
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
@@ -13,6 +14,11 @@
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
+
+  --color-smooth-white: #e1eef6;
+  --color-smooth-orange: #ff5f2e;
+  --color-smooth-yellow: #fcbe32;
+  --color-smooth-dark-blue: #004e66;
 
   /* Font size */
   --font-large: 48px;
@@ -51,6 +57,12 @@ ul {
   padding-left: 0;
 }
 
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
 /* Typography */
 h1 {
   font-size: var(--font-large);
@@ -81,9 +93,9 @@ p {
 #navbar {
   display: flex;
   justify-content: space-between;
-  background: var(--color-pink);
+  background: var(--color-smooth-dark-blue);
   align-items: center;
-  color: var(--color-white);
+  color: var(--color-smooth-white);
   padding: 8px;
 }
 
@@ -99,14 +111,43 @@ p {
 }
 
 .navbar__menu__item.active {
-  border: 1px solid var(--color-white);
+  background-color: var(--color-smooth-orange);
+  border: 1px solid var(--color-smooth-white);
 }
 
 .navbar__menu__item:hover {
-  background-color: var(--color-dark-pink);
+  background-color: var(--color-smooth-yellow);
+  color: var(--color-smooth-dark-blue);
 }
 
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+}
+
+#home {
+  background: url("image/background2.png") center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+.home__avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid var(--color-light-white);
+}
+
+.home__title,
+.home__description {
+  color: var(--color-smooth-white);
+}
+
+.home__contact {
+  color: var(--color-smooth-white);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  padding: 8px 12px;
+  margin: 24px;
+  border: 2px solid var(--color-smooth-white);
+  border-radius: 4px;
 }
