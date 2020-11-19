@@ -178,6 +178,11 @@ p {
   border-radius: 4px;
 }
 
+.home__contact:hover {
+  background-color: var(--color-smooth-yellow);
+  color: var(--color-black);
+}
+
 /* Section common */
 .section {
   padding: 50px;
@@ -193,7 +198,8 @@ p {
 .about__majors {
   display: flex;
   justify-content: space-between;
-  margin: 80px 0;
+  margin-top: 30px;
+  margin-bottom: 0px;
 }
 
 .major__icon {
@@ -341,6 +347,7 @@ p {
   border-radius: var(--size-border-radius);
   margin: 10px 3px;
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn:hover,
@@ -363,9 +370,9 @@ p {
   height: 22px;
   line-height: 22px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -421,6 +428,7 @@ p {
   justify-content: center;
   opacity: 0;
   transition: all 300ms ease-in;
+  display: ;
 }
 
 .project__description h3 {
@@ -543,8 +551,20 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+
+    right: 16px;
+    font-size: var(--font-medium);
   }
   #navbar {
     flex-direction: column;
@@ -567,7 +587,7 @@ p {
     flex-direction: column;
   }
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
   .skillset {
     flex-direction: column;
@@ -585,8 +605,34 @@ p {
   .project {
     flex-grow: 1;
   }
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
+  }
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .testimonial__avartar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    right: 16px;
+    bottom: 16px;
   }
 }
