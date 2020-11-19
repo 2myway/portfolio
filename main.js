@@ -1,3 +1,5 @@
+
+// Make navbar transparent when it is on the top
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 
@@ -9,7 +11,8 @@ document.addEventListener('scroll',()=>{
     }
 });
 
-//Handle scrolling then tapping on the navbar menu
+
+//Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
 
@@ -27,6 +30,8 @@ navbarMenu.addEventListener('click', (event) => {
     // };
     // target.classList.toggle('active');
     //change active button [end]
+    navbarMenu.classList.remove('open');
+
     const active = document.querySelector('.navbar__menu__item.active');
     active.classList.remove('active');
     event.target.classList.add('active');
@@ -34,6 +39,11 @@ navbarMenu.addEventListener('click', (event) => {
     scrollIntoView(link);
 });
 
+//Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+});
 
 //Handle click on "Contact me" button on home
 const homeContactBtn = document.querySelector('.home__contact');
@@ -95,7 +105,10 @@ workBtnContainer.addEventListener('click',(event)=>{
         projectContainer.classList.remove('anim-out');
     },300);
 
-})
+});
+
+
+
 
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
