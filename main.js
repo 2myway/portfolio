@@ -20,13 +20,16 @@ navbarMenu.addEventListener('click', (event) => {
     }
 
     // change active button [start]
-    var ndList = navbarMenu.children; 
-    for (var i = 0; i < ndList.length; i++) 
-    {
-        ndList[i].classList.remove("active");
-    };
-    target.classList.toggle('active');
+    // var ndList = navbarMenu.children; 
+    // for (var i = 0; i < ndList.length; i++) 
+    // {
+    //     ndList[i].classList.remove("active");
+    // };
+    // target.classList.toggle('active');
     //change active button [end]
+    const active = document.querySelector('.navbar__menu__item.active');
+    active.classList.remove('active');
+    event.target.classList.add('active');
 
     scrollIntoView(link);
 });
@@ -71,6 +74,14 @@ workBtnContainer.addEventListener('click',(event)=>{
     if(filter == null){
         return;
     }
+
+    //Remove selection from previous item and select the new one
+    const active = document.querySelector('.category__btn.active');
+    active.classList.remove('active');
+
+    const target = event.target.nodeName ==='BUTTON' ? event.target: event.target.parentNode;
+    target.classList.add('active');
+
     projectContainer.classList.add('anim-out');
 
     setTimeout(()=>{
